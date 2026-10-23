@@ -695,5 +695,86 @@
 <!-- ============ SCRIPTS ============ -->
 <script src="portfolio-data.js" defer></script>
 <script src="script.js" defer></script>
+  <!-- ============ VISITOR TRACKING ============ -->
+<script>
+(() => {
+  "use strict";
+
+  const WORKER_URL =
+    "https://portfolio-visitor-alert.mahirahmed966.workers.dev/";
+
+  const SESSION_KEY = "portfolio_visitor_notified";
+
+  // Only track the published portfolio.
+  if (location.hostname !== "mahir966.github.io") return;
+
+  try {
+    if (sessionStorage.getItem(SESSION_KEY)) return;
+  } catch {}
+
+  const ua = navigator.userAgent || "";
+
+  let os = "Unknown";
+  if (/Android/i.test(ua)) os = "Android";
+  else if (/iPhone|iPad|iPod/i.test(ua)) os = "iOS/iPadOS";
+  else if (/Windows/i.test(ua)) os = "Windows";
+  else if (/Macintosh|Mac OS X/i.test(ua)) os = "macOS";
+  else if (/Linux/i.test(ua)) os = "Linux";
+
+  let browser = "Unknown";
+  if (/Edg\//i.test(ua)) browser = "Microsoft Edge";
+  else if (/OPR\//i.test(ua)) browser = "Opera";
+  else if (/Firefox\//i.test(ua)) browser = "Firefox";
+  else if (/Chrome\//i.test(ua)) browser = "Chrome";
+  else if (/Safari\//i.test(ua)) browser = "Safari";
+
+  let device = "Desktop";
+  if (/iPad|Tablet/i.test(ua)) device = "Tablet";
+  else if (/Mobi|iPhone|Android/i.test(ua)) device = "Mobile";
+
+  let referrer = "Direct";
+  try {
+    if (document.referrer) {
+      referrer = new URL(document.referrer).hostname;
+    }
+  } catch {}
+
+  const payload = {
+    page: location.pathname,
+    device,
+    os,
+    browser,
+    ram: navigator.deviceMemory
+      ? `${navigator.deviceMemory} GB approx.`
+      : "Not exposed",
+    cores: navigator.hardwareConcurrency || "Not exposed",
+    screen: `${screen.width} × ${screen.height}`,
+    viewport: `${innerWidth} × ${innerHeight}`,
+    language: navigator.language || "Unknown",
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    referrer
+  };
+
+  fetch(WORKER_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+    mode: "cors",
+    keepalive: true
+  })
+    .then(response => {
+      if (response.ok) {
+        try {
+          sessionStorage.setItem(SESSION_KEY, "1");
+        } catch {}
+      } else {
+        console.error("Visitor tracking failed:", response.status);
+      }
+    })
+    .catch(error => {
+      console.error("Visitor tracking error:", error);
+    });
+})();
+</script>
 </body>
 </html>
