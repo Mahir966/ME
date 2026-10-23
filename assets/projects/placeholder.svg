@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Cybercore technical project blueprint">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04070f"/>
+      <stop offset="0.6" stop-color="#081424"/>
+      <stop offset="1" stop-color="#0b1b30"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#22d3ee" stroke-opacity="0.08" stroke-width="1"/>
+      <circle cx="40" cy="40" r="1.5" fill="#22d3ee" fill-opacity="0.25"/>
+    </pattern>
+    <linearGradient id="cyan-blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <radialGradient id="node-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <!-- Ambient glow nodes -->
+  <circle cx="400" cy="225" r="160" fill="url(#node-glow)"/>
+  <circle cx="680" cy="80" r="100" fill="#6d8cff" opacity="0.08"/>
+  <circle cx="120" cy="360" r="120" fill="#22d3ee" opacity="0.06"/>
+  <!-- Technical blueprint geometry -->
+  <g fill="none" stroke="url(#cyan-blue)" stroke-width="2" opacity="0.85">
+    <!-- Outer boundary box with corner brackets -->
+    <rect x="180" y="90" width="440" height="270" rx="6" stroke="#22d3ee" stroke-opacity="0.3" stroke-dasharray="6 4"/>
+    <path d="M165 110 V75 H200" stroke="#22d3ee" stroke-width="3"/>
+    <path d="M635 110 V75 H600" stroke="#22d3ee" stroke-width="3"/>
+    <path d="M165 340 V375 H200" stroke="#22d3ee" stroke-width="3"/>
+    <path d="M635 340 V375 H600" stroke="#22d3ee" stroke-width="3"/>
+    <!-- Central architectural core -->
+    <rect x="310" y="160" width="180" height="130" rx="8" stroke="url(#cyan-blue)" stroke-width="2.5" fill="#061220" fill-opacity="0.8"/>
+    <path d="M350 160 V130 H450 V160" stroke="#22d3ee" stroke-width="2"/>
+    <path d="M310 225 H240 V180 H210" stroke="#60a5fa" stroke-width="1.8"/>
+    <path d="M490 225 H560 V270 H590" stroke="#60a5fa" stroke-width="1.8"/>
+    <path d="M400 290 V330 H480 V350" stroke="#818cf8" stroke-width="1.8"/>
+    <!-- Core nodes -->
+    <circle cx="400" cy="225" r="24" fill="#040814" stroke="url(#cyan-blue)" stroke-width="2"/>
+    <circle cx="400" cy="225" r="10" fill="#22d3ee" fill-opacity="0.8"/>
+    <circle cx="210" cy="180" r="4" fill="#22d3ee"/>
+    <circle cx="590" cy="270" r="4" fill="#818cf8"/>
+    <circle cx="480" cy="350" r="4" fill="#60a5fa"/>
+  </g>
+  <!-- Technical metadata readouts -->
+  <g font-family="'JetBrains Mono', 'Space Grotesk', monospace" font-size="12" fill="#7ba3c4" letter-spacing="2">
+    <text x="210" y="125">SYS.ARCH // CLIENT-SIDE CORE</text>
+    <text x="590" y="335" text-anchor="end">STATUS: DEPLOYED &amp; VERIFIED</text>
+  </g>
+</svg>

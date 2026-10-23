@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Mahir Ahmed Technical Identifier">
+  <defs>
+    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="cyber-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a2c"/>
+      <stop offset="100%" stop-color="#04070f"/>
+    </linearGradient>
+    <pattern id="tech-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#22d3ee" stroke-width="0.5" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="20" fill="url(#cyber-glow)"/>
+  <rect width="400" height="400" rx="20" fill="url(#tech-grid)"/>
+
+  <!-- Outer Technical Ring & Framing -->
+  <rect x="16" y="16" width="368" height="368" rx="14" fill="none" stroke="#1d3b52" stroke-width="1.5"/>
+  <rect x="24" y="24" width="352" height="352" rx="10" fill="none" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="4 8"/>
+
+  <!-- Corner Brackets -->
+  <path d="M 28 44 L 28 28 L 44 28" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 372 44 L 372 28 L 356 28" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 28 356 L 28 372 L 44 372" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 372 356 L 372 372 L 356 372" fill="none" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Concentric Radar / Target Rings -->
+  <circle cx="200" cy="180" r="110" fill="none" stroke="#1d3b52" stroke-width="1.5"/>
+  <circle cx="200" cy="180" r="110" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="12 16" stroke-opacity="0.4"/>
+  <circle cx="200" cy="180" r="85" fill="#061324" fill-opacity="0.75" stroke="#22d3ee" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Crosshairs -->
+  <line x1="200" y1="58" x2="200" y2="72" stroke="#22d3ee" stroke-width="1.5"/>
+  <line x1="200" y1="288" x2="200" y2="302" stroke="#22d3ee" stroke-width="1.5"/>
+  <line x1="78" y1="180" x2="92" y2="180" stroke="#22d3ee" stroke-width="1.5"/>
+  <line x1="308" y1="180" x2="322" y2="180" stroke="#22d3ee" stroke-width="1.5"/>
+
+  <!-- Stylized Geometric "MA" Monogram -->
+  <g transform="translate(200, 180)">
+    <!-- Shield / Hex Core -->
+    <polygon points="0,-64 55,-32 55,32 0,64 -55,32 -55,-32" fill="#091c33" stroke="url(#cyber-grad)" stroke-width="2"/>
+    
+    <!-- Monogram Typography: MA -->
+    <text x="0" y="20" font-family="'JetBrains Mono', 'Space Grotesk', -apple-system, sans-serif" font-size="52" font-weight="800" fill="#dff3ff" text-anchor="middle" letter-spacing="4">MA</text>
+  </g>
+
+  <!-- Telemetry and Identity Annotations -->
+  <text x="200" y="325" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" fill="#22d3ee" text-anchor="middle" letter-spacing="3">MAHIR AHMED</text>
+  <text x="200" y="348" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b" text-anchor="middle" letter-spacing="2">SYS.ID // MA-966 · DHAKA, BD</text>
+</svg>
